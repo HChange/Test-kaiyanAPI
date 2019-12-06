@@ -1,0 +1,23 @@
+// 单行文本溢出隐藏
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//多行文本溢出隐藏
+.more-overflow {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.page{
+  position: absolute;
+  width: 100%;
+  top:0;
+  left: 0;
+  bottom: 0px;
+  background: snow;
+}
