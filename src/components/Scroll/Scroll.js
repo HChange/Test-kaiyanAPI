@@ -4,50 +4,48 @@ import "./style.scss";
 export default class Scroll extends Component {
   render() {
     return (
-      <div className="scroll" ref="scroll">
+      <div style={this.props.style}  className="scroll" ref="scroll">
         <div className="scrollContent">{this.props.children}</div>
       </div>
     );
   }
   componentDidMount() {
-    let scroll = new BScroll(this.refs.scroll, {
+    new BScroll(this.refs.scroll, {
       tap: true,
       click: true,
       probeType: 3,
+      freeScroll:true
       //下拉
-      pullDownRefresh: {
-        threshold: 44.44,
-        // stop: 44.44
-      },
-      //上拉
-      pullUpLoad: {
-        threshold: 44.44,
-        // pullDownRefresh: true, // 默认stop: 40
-        stop: 40
-      },
+      // pullDownRefresh: {
+      //   threshold: 44.44,
+      //   // stop: 44.44
+      // },
+      // //上拉
+      // pullUpLoad: {
+      //   threshold: 44.44,
+      //   // pullDownRefresh: true, // 默认stop: 40
+      //   stop: 40
+      // },
 
     });
     //下拉
-    scroll.on("pullingDown", () => {
-      // this.getData();
-       setTimeout(() => {
-         console.log(111);
-          scroll.finishPullDown();
-          scroll.refresh();
-         
-       }, 1000);
-    });
-    //上拉
-    scroll.on("pullingUp", () => {
-      // this.getData();
+    // scroll.on("pullingDown", () => {
+    //   // this.getData();
+    //   // this.props.onRefresh();
+    //   scroll.finishPullDown();
+    //   scroll.refresh();
+    // });
+    // //上拉
+    // scroll.on("pullingUp", () => {
+    //   // this.getData();
       
-      setTimeout(() => {
-        console.log(111);
-       scroll.finishPullUp();
-        // scroll.refresh();
-      }, 10000);
+    //   setTimeout(() => {
+    //     console.log(111);
+    //    scroll.finishPullUp();
+    //     // scroll.refresh();
+    //   }, 10000);
      
-    });
+    // });
 
     
 

@@ -1,6 +1,7 @@
 .home {
   width: 100%;
   color: #444444;
+  box-sizing: border-box;
   .pullRefetch{
     height: 150px;
     position: absolute;
@@ -14,6 +15,7 @@
     text-align: center;
   }
   .scroll {
+    overflow: hidden;
     .content {
       background: #ffffff;
       width: 100%;
@@ -94,5 +96,24 @@
         }
       }
     }
+        .loadMore{
+      height: 96px;
+      line-height: 96px;
+      text-align: center;
+    }
   }
+}
+.duration{
+  height: 56px;
+  width: 90px;
+  position: absolute;
+  background: #131712;
+  border-radius: 4px;
+  line-height: 56px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  right: 20px;
+  top : 20px
+
 }

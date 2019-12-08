@@ -11,7 +11,7 @@ export default class upload extends Component {
     render() {
         return (
           <div className="upload page">
-            <Header title="上传" {...this.props} />
+            <Header hasBack={true} title="上传" {...this.props} />
           </div>
         );
     }

@@ -3,35 +3,44 @@ import api from "../../utils/api";
 import {get} from "../../utils/http";
 
 const initialState = {
-  data:""
+    itemList:[],
+    nextPageUrl:""
 };
 
 const rudcer = (state = initialState, action) => {
-  console.log(action);
+  // console.log(state);
   
   switch (action.type) {
     case "setData":
-      console.log(action);
-      let data = {
-        itemList: action.data.itemList.filter(item=>item.type==="video"),
-        nextPageUrl: action.data.nextPageUrl
-      };
+        console.log(action.data.nextPageUrl);
+        
       return {
         ...state,
-        data
-      }
+        itemList: [
+          ...state.itemList,
+          ...action.data.itemList.filter(item => item.type === "video")
+        ],
+        nextPageUrl:
+          action.data.nextPageUrl === null
+            ? "/api/v4/tabs/selected?date=" + action.data.nextPublishTime
+            : action.data.nextPageUrl.replace("http://baobab.kaiyanapp.com/","/")
+      };
     default:
       return state;
-
   }
 };
 
-export const requestData = ()=>  async dispatch => {
-  let data = await get(api.REQUEST_DATA);
+export const requestData = (url)=>  async dispatch => {
+  console.log(url);
+  let data = ""
+  if(!url){
+    data = await get(api.REQUEST_DATA);
+  }else{
+    data = await get(url);
+  }
   let action = setData(data);
   dispatch(action);
 };
-
 
 export const setData = (val)=>({
   type: 'setData',

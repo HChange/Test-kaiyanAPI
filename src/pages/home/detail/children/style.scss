@@ -1,0 +1,71 @@
+.mask{
+  pointer-events:none;
+  height: 607.5px;
+  width: 100%;
+//   background: rgba(64, 224, 208, 0.26);
+  position: relative;
+  z-index: 666;
+}
+.allReply {
+  position: absolute;
+  top:607.5px;
+  bottom: 0;
+  width: 100%;
+ background:linear-gradient(to bottom, #0d0a08,#463d3c, #1c2631);
+  h1,h2{
+      font-size: 46px;
+      font-weight: bold;
+      line-height: 66px;
+    color: #f1f1f1;
+
+  }
+  h1{
+      margin-top: 26px;
+      text-indent: 26px;
+  }
+    .item{
+        display: flex;
+        padding: 50px 0;
+        margin:0 40px;
+        img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-right:30px;
+        }
+        .center{
+            flex:1;
+            
+            .name{
+                overflow: hidden;
+                color: #f1f1f1;
+                span{
+                    float: left;
+                }
+                .liked{
+                    float: right;
+                }
+            }
+        }
+        p{
+            margin-top: 20px;
+            font-size: 40px;
+            line-height: 46px;
+            color: #f1f1f1;
+        }
+        .liked{
+            height:70px;
+            // margin-right: 30px;
+            span{
+                font-size: 60px;
+                text-align: center;
+                margin-right: 15px;
+                &:nth-of-type(1){
+                    font-size: 44px;
+                }
+            }
+
+            
+        }
+    }
+}
