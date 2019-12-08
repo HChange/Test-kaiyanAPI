@@ -1,4 +1,4 @@
-const HOST = "http://localhost:3000";
+const HOST = "http://www.hellochange.cn:3000";
 
 // 首页数据
 const REQUEST_DATA =HOST+"/api/v4/tabs/selected";
