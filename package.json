@@ -155,7 +155,7 @@
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^1.7.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "postcss-pxtorem": "^4.0.1"
   }
 }
